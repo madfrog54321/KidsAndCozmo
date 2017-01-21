@@ -1,19 +1,39 @@
 {
+  "name": "KidsAndCozmo",
+  "version": "0.1.0",
+  "description": "Test",
+  "main": "app/main.js",
   "scripts": {
+    "start": "electron .",
+    "stylus": "node node_modules/stylus/bin/stylus styl/style.styl --out app/css --use url --with \"{limit: false}\" --watch",
+    "dev": "set DEV=true && node ./node_modules/concurrently/src/main.js --kill-others \"npm run stylus\" \"npm start\"",
     "postinstall": "install-app-deps",
-    "start": "electron ./app --enable-logging",
-    "dev": "NODE_ENV='development' npm run start",
-    "dist": "build -mwl --x64 --ia32"
+    "pack": "build --dir",
+    "dist": "build",
+  	"dist-x": "build -ml",
+  	"release": "build"
   },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madfrog54321/KidsAndCozmo.git"
+  },
+  "keywords": [
+    "Cozmo"
+  ],
+  "author": "Konnor Andrews",
+  "bugs": {
+    "url": "https://github.com/madfrog54321/KidsAndCozmo/issues"
+  },
+  "homepage": "https://github.com/madfrog54321/KidsAndCozmo",
   "devDependencies": {
-    "electron-builder": "~5.12.X",
-    "electron-prebuilt": "~1.2.X"
+    "electron-builder": "^5.16.0",
+    "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
   },
   "build": {
-    "appID": "com.cozmo.kids",
-    "app-catagory-type": "public.app-catagory.productivity",
-    "win:": {
-      "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
-    }
+    "appId": "com.konnor.kidsandcozmo",
+    "app-category-type": "public.app-category.productivity"
   }
 }
