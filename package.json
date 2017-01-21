@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron ./app --enable-logging",
+    "dev": "NODE_ENV='development' npm run start",
+    "dist": "build -mwl --x64 --ia32"
+  },
+  "devDependencies": {
+    "electron-builder": "~5.12.X",
+    "electron-prebuilt": "~1.2.X"
+  },
+  "build": {
+    "appID": "com.cozmo.kids",
+    "app-catagory-type": "public.app-catagory.productivity",
+    "win:": {
+      "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
+    }
+  }
+}
