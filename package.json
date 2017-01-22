@@ -2,11 +2,10 @@
   "name": "KidsAndCozmo",
   "version": "0.1.0",
   "description": "Test",
+  "license": "MIT",
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
-    "stylus": "node node_modules/stylus/bin/stylus styl/style.styl --out app/css --use url --with \"{limit: false}\" --watch",
-    "dev": "set DEV=true && node ./node_modules/concurrently/src/main.js --kill-others \"npm run stylus\" \"npm start\"",
     "postinstall": "install-app-deps",
     "pack": "build --dir",
     "dist": "build",
@@ -34,6 +33,8 @@
   },
   "build": {
     "appId": "com.konnor.kidsandcozmo",
-    "app-category-type": "public.app-category.productivity"
+    "mac": {
+      "category": "public.app-category.programming"
+    }
   }
 }
