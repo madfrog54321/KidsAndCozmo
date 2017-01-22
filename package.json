@@ -35,6 +35,9 @@
     "appId": "com.konnor.kidsandcozmo",
     "mac": {
       "category": "public.app-category.programming"
+    },
+    "nsis": {
+      "oneClick": true
     }
   }
 }
